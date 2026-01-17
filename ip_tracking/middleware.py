@@ -1,18 +1,15 @@
+# ip_tracking/middleware.py
 from .models import RequestLog
+from ipware import get_client_ip  # pip install django-ipware
 
 class IPLoggingMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
 
     def __call__(self, request):
-        ip = request.META.get('REMOTE_ADDR')
+        ip, _ = get_client_ip(request)
         path = request.path
-
         if ip:
-            RequestLog.objects.create(
-                ip_address=ip,
-                path=path
-            )
-
+            RequestLog.objects.create(ip_address=ip, path=path)
         response = self.get_response(request)
         return response
