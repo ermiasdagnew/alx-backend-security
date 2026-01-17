@@ -1,3 +1,6 @@
-Django
-celery
-django-ratelimit
+Django>=4.2
+gunicorn>=20.1
+django-ratelimit>=3.0
+django-ipgeolocation>=2.0
+celery>=5.3
+redis>=5.0
