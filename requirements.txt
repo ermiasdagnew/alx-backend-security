@@ -1,6 +1,8 @@
 Django>=4.2
 gunicorn>=20.1
 django-ratelimit>=3.0
-django-ipgeolocation>=2.0
+django-ipware>=4.0
+geoip2>=4.5
 celery>=5.3
 redis>=5.0
+requests>=2.31
