@@ -2,10 +2,18 @@
 import os
 import sys
 
-if __name__ == "__main__":
+def main():
     os.environ.setdefault(
         "DJANGO_SETTINGS_MODULE",
         "alx_backend_security.settings"
     )
-    from django.core.management import execute_from_command_line
+    try:
+        from django.core.management import execute_from_command_line
+    except ImportError as exc:
+        raise ImportError(
+            "Couldn't import Django. Is it installed and available on your PYTHONPATH?"
+        ) from exc
     execute_from_command_line(sys.argv)
+
+if __name__ == "__main__":
+    main()
