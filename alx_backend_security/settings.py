@@ -1,2 +1,2 @@
-INSTALLED_APPS = ['ip_tracking']
-MIDDLEWARE = ['ip_tracking.middleware.IPLoggingMiddleware']
+ROOT_URLCONF = "alx_backend_security.urls"
+WSGI_APPLICATION = "alx_backend_security.wsgi.application"
